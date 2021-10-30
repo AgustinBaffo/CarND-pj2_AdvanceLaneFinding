@@ -57,7 +57,24 @@ I used a combination of color and gradient thresholds to generate a binary image
 Here's an example of my output for this step:
 
 ![Binary][image3]
-arrart to verify that the lines appear parallel in the warped image.
+
+### 3.- Apply mask:
+
+I use `region_of_interest` to create and crop image in the zone of the line. The result is the following:
+
+![alt text][image4]
+
+<!-- A part of the video showing the output at this stage: -->
+
+<!-- ![alt text][gif1] -->
+
+### 4.- Perspective Transformation
+
+The code for my perspective transform includes a function called `warper()`. The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  The following image shows the transformation that assigns each blue points to each vertex of the red rectangle:
+
+![alt text][image5]
+
+I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 ![Warped][image6]
 
